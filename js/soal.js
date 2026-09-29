@@ -1,146 +1,135 @@
 (function (global) {
   'use strict';
 
-  // Database soal Pendidikan Pancasila - Kelas 3 SD Semester Ganjil
+  // Database soal Matematika - Kelas 3 SD - Operasi Hitung
+  // Materi: penjumlahan, pengurangan, perkalian, pembagian
   // l: tingkat (mudah | sedang | sulit)
   // k: kategori materi, q: pertanyaan, a: jawaban benar, d: 5 pengecoh
   // img: (opsional) path gambar nyata untuk soal bergambar
   const LIST = [
-    // ---------- MUDAH: Dasar Negara ----------
-    { l: 'mudah', k: 'Dasar Negara', q: 'Apa dasar negara Indonesia?', a: 'Pancasila', d: ['UUD 1945', 'Garuda', 'Bhinneka', 'Merah Putih', 'Indonesia'] },
-    { l: 'mudah', k: 'Dasar Negara', q: 'Pancasila terdiri dari berapa sila?', a: '5 sila', d: ['3 sila', '4 sila', '6 sila', '7 sila', '2 sila'] },
-    { l: 'mudah', k: 'Dasar Negara', q: 'Kata "panca" artinya...', a: 'lima', d: ['tiga', 'dasar', 'satu', 'tujuh', 'empat'] },
-    { l: 'mudah', k: 'Dasar Negara', q: 'Kata "sila" artinya...', a: 'dasar', d: ['lima', 'aturan', 'negara', 'bangsa', 'raja'] },
+    // ---------- MUDAH: Penjumlahan ----------
+    { l: 'mudah', k: 'Penjumlahan', q: '5 + 3 = ?', a: '8', d: ['7', '9', '6', '10', '2'] },
+    { l: 'mudah', k: 'Penjumlahan', q: '12 + 7 = ?', a: '19', d: ['18', '20', '17', '15', '21'] },
+    { l: 'mudah', k: 'Penjumlahan', q: '20 + 15 = ?', a: '35', d: ['30', '40', '34', '36', '25'] },
+    { l: 'mudah', k: 'Penjumlahan', q: '8 + 8 = ?', a: '16', d: ['14', '18', '15', '17', '12'] },
+    { l: 'mudah', k: 'Penjumlahan', q: '25 + 14 = ?', a: '39', d: ['38', '40', '36', '41', '29'] },
+    { l: 'mudah', k: 'Penjumlahan', q: '30 + 25 = ?', a: '55', d: ['50', '60', '54', '56', '45'] },
+    { l: 'mudah', k: 'Penjumlahan', q: '40 + 12 = ?', a: '52', d: ['50', '54', '53', '51', '42'] },
+    { l: 'mudah', k: 'Penjumlahan', q: '6 + 9 = ?', a: '15', d: ['14', '16', '13', '17', '12'] },
+    { l: 'mudah', k: 'Penjumlahan', q: '17 + 6 = ?', a: '23', d: ['22', '24', '21', '25', '13'] },
+    { l: 'mudah', k: 'Penjumlahan', q: 'Ada 3 baki, tiap baki berisi 4 donat. Berapa jumlah donat pada gambar?', a: '12', d: ['10', '14', '11', '13', '9'], img: 'assets/img/hitung-01.png' },
 
-    // ---------- MUDAH: Sila Pancasila ----------
-    { l: 'mudah', k: 'Sila Pancasila', q: 'Sila pertama diawali kata...', a: 'Ketuhanan', d: ['Persatuan', 'Keadilan', 'Kerakyatan', 'Kemanusiaan', 'Negara'] },
-    { l: 'mudah', k: 'Sila Pancasila', q: 'Sila kedua diawali kata...', a: 'Kemanusiaan', d: ['Ketuhanan', 'Persatuan', 'Kerakyatan', 'Keadilan', 'Bangsa'] },
-    { l: 'mudah', k: 'Sila Pancasila', q: 'Sila ketiga diawali kata...', a: 'Persatuan', d: ['Ketuhanan', 'Kemanusiaan', 'Kerakyatan', 'Keadilan', 'Rakyat'] },
-    { l: 'mudah', k: 'Sila Pancasila', q: 'Sila keempat diawali kata...', a: 'Kerakyatan', d: ['Keadilan', 'Persatuan', 'Ketuhanan', 'Kemanusiaan', 'Sosial'] },
-    { l: 'mudah', k: 'Sila Pancasila', q: 'Sila kelima diawali kata...', a: 'Keadilan', d: ['Kerakyatan', 'Persatuan', 'Ketuhanan', 'Kemanusiaan', 'Sosial'] },
-    { l: 'mudah', k: 'Sila Pancasila', q: 'Gambar ini melambangkan sila ke...', a: 'satu', d: ['dua', 'tiga', 'empat', 'lima', 'enam'], img: 'assets/img/bintang.png' },
-    { l: 'mudah', k: 'Sila Pancasila', q: 'Pohon beringin melambangkan sila ke...', a: 'tiga', d: ['satu', 'dua', 'empat', 'lima', 'enam'], img: 'assets/img/beringin.jpg' },
-    { l: 'mudah', k: 'Sila Pancasila', q: 'Kepala banteng melambangkan sila ke...', a: 'empat', d: ['satu', 'dua', 'tiga', 'lima', 'enam'], img: 'assets/img/banteng.jpg' },
-    { l: 'mudah', k: 'Sila Pancasila', q: 'Padi dan kapas melambangkan sila ke...', a: 'lima', d: ['satu', 'dua', 'tiga', 'empat', 'enam'], img: 'assets/img/kapas.jpg' },
-    { l: 'mudah', k: 'Sila Pancasila', q: 'Rantai melambangkan sila ke...', a: 'dua', d: ['satu', 'tiga', 'empat', 'lima', 'enam'] },
+    // ---------- MUDAH: Pengurangan ----------
+    { l: 'mudah', k: 'Pengurangan', q: '10 - 4 = ?', a: '6', d: ['5', '7', '4', '8', '14'] },
+    { l: 'mudah', k: 'Pengurangan', q: '18 - 5 = ?', a: '13', d: ['12', '14', '11', '15', '23'] },
+    { l: 'mudah', k: 'Pengurangan', q: '25 - 10 = ?', a: '15', d: ['14', '16', '13', '17', '35'] },
+    { l: 'mudah', k: 'Pengurangan', q: '30 - 12 = ?', a: '18', d: ['17', '19', '16', '20', '42'] },
+    { l: 'mudah', k: 'Pengurangan', q: '16 - 9 = ?', a: '7', d: ['6', '8', '5', '9', '25'] },
+    { l: 'mudah', k: 'Pengurangan', q: '24 - 8 = ?', a: '16', d: ['15', '17', '14', '18', '32'] },
+    { l: 'mudah', k: 'Pengurangan', q: '40 - 15 = ?', a: '25', d: ['24', '26', '23', '27', '55'] },
+    { l: 'mudah', k: 'Pengurangan', q: '52 - 20 = ?', a: '32', d: ['31', '33', '30', '34', '72'] },
+    { l: 'mudah', k: 'Pengurangan', q: '60 - 25 = ?', a: '35', d: ['34', '36', '33', '37', '85'] },
+    { l: 'mudah', k: 'Pengurangan', q: 'Ada 10 permen, 3 permen sudah dimakan. Berapa sisa permen pada gambar?', a: '7', d: ['6', '8', '5', '9', '3'], img: 'assets/img/hitung-03.png' },
 
-    // ---------- MUDAH: Lambang Negara ----------
-    { l: 'mudah', k: 'Lambang Negara', q: 'Burung apa pada lambang negara ini?', a: 'Garuda', d: ['Elang', 'Banteng', 'Komodo', 'Merak', 'Angsa'], img: 'assets/img/garuda.png' },
-    { l: 'mudah', k: 'Lambang Negara', q: 'Apa nama lengkap lambang negara kita?', a: 'Garuda Pancasila', d: ['Garuda Emas', 'Garuda Muda', 'Rajawali', 'Elang Putih', 'Garuda Jaya'] },
+    // ---------- MUDAH: Perkalian ----------
+    { l: 'mudah', k: 'Perkalian', q: '2 x 3 = ?', a: '6', d: ['5', '7', '4', '8', '9'] },
+    { l: 'mudah', k: 'Perkalian', q: '4 x 5 = ?', a: '20', d: ['18', '22', '19', '21', '15'] },
+    { l: 'mudah', k: 'Perkalian', q: '7 x 2 = ?', a: '14', d: ['13', '15', '12', '16', '9'] },
+    { l: 'mudah', k: 'Perkalian', q: '6 x 3 = ?', a: '18', d: ['17', '19', '16', '20', '12'] },
+    { l: 'mudah', k: 'Perkalian', q: '5 x 5 = ?', a: '25', d: ['24', '26', '23', '27', '20'] },
+    { l: 'mudah', k: 'Perkalian', q: '9 x 3 = ?', a: '27', d: ['26', '28', '25', '29', '18'] },
+    { l: 'mudah', k: 'Perkalian', q: '8 x 4 = ?', a: '32', d: ['31', '33', '30', '34', '24'] },
+    { l: 'mudah', k: 'Perkalian', q: '10 x 6 = ?', a: '60', d: ['55', '65', '58', '62', '50'] },
+    { l: 'mudah', k: 'Perkalian', q: '2 x 7 = ?', a: '14', d: ['12', '16', '13', '15', '21'] },
+    { l: 'mudah', k: 'Perkalian', q: 'Gambar menunjukkan 4 keranjang, tiap keranjang berisi 5 apel. Berapa jumlah apel?', a: '20', d: ['15', '25', '16', '24', '10'], img: 'assets/img/hitung-02.png' },
 
-    // ---------- MUDAH: Simbol Negara ----------
-    { l: 'mudah', k: 'Simbol Negara', q: 'Apa warna bendera kita?', a: 'Merah putih', d: ['Biru kuning', 'Putih hijau', 'Hitam emas', 'Merah hijau', 'Kuning putih'], img: 'assets/img/bendera.png' },
-    { l: 'mudah', k: 'Simbol Negara', q: 'Bendera merah putih terdiri dari berapa warna?', a: '2 warna', d: ['3 warna', '4 warna', '5 warna', '6 warna', '1 warna'] },
-    { l: 'mudah', k: 'Simbol Negara', q: 'Apa nama lagu kebangsaan pada gambar ini?', a: 'Indonesia Raya', d: ['Merdeka', 'Satu Nusa', 'Ibu Kita', 'Rajawali', 'Gembira'], img: 'assets/img/indonesiaraya.jpg' },
-    { l: 'mudah', k: 'Simbol Negara', q: 'Kapan bendera ini pertama dikibarkan?', a: '17 Agustus', d: ['1 Juni', '10 November', '28 Oktober', '5 Desember', '17 Juli'], img: 'assets/img/bendera1945.jpg' },
+    // ---------- MUDAH: Pembagian ----------
+    { l: 'mudah', k: 'Pembagian', q: '12 : 3 = ?', a: '4', d: ['3', '5', '2', '6', '9'] },
+    { l: 'mudah', k: 'Pembagian', q: '20 : 4 = ?', a: '5', d: ['4', '6', '3', '7', '15'] },
+    { l: 'mudah', k: 'Pembagian', q: '18 : 2 = ?', a: '9', d: ['8', '10', '7', '11', '12'] },
+    { l: 'mudah', k: 'Pembagian', q: '25 : 5 = ?', a: '5', d: ['4', '6', '3', '7', '20'] },
+    { l: 'mudah', k: 'Pembagian', q: '36 : 6 = ?', a: '6', d: ['5', '7', '4', '8', '30'] },
+    { l: 'mudah', k: 'Pembagian', q: '15 : 5 = ?', a: '3', d: ['2', '4', '1', '5', '10'] },
+    { l: 'mudah', k: 'Pembagian', q: '40 : 8 = ?', a: '5', d: ['4', '6', '3', '7', '35'] },
+    { l: 'mudah', k: 'Pembagian', q: '14 : 7 = ?', a: '2', d: ['1', '3', '4', '5', '7'] },
+    { l: 'mudah', k: 'Pembagian', q: '48 : 6 = ?', a: '8', d: ['7', '9', '6', '10', '42'] },
+    { l: 'mudah', k: 'Pembagian', q: '12 pensil dibagi rata ke dalam 3 gelas. Berapa pensil tiap gelas pada gambar?', a: '4', d: ['3', '5', '2', '6', '12'], img: 'assets/img/hitung-04.png' },
 
-    // ---------- MUDAH: Sejarah ----------
-    { l: 'mudah', k: 'Sejarah', q: 'Apa nama naskah pada gambar?', a: 'Proklamasi', d: ['UUD 1945', 'Piagam', 'Kongres', 'Konferensi', 'Perjanjian'], img: 'assets/img/naskah.jpg' },
-    { l: 'mudah', k: 'Sejarah', q: 'Siapa presiden pertama Indonesia?', a: 'Soekarno', d: ['Hatta', 'Jokowi', 'Suharto', 'Habibie', 'Gus Dur'], img: 'assets/img/soekarno.jpg' },
-    { l: 'mudah', k: 'Sejarah', q: 'Apa nama undang-undang dasar negara kita?', a: 'UUD 1945', d: ['KUHP', 'Perppu', 'Piagam', 'Dekrit', 'Risalah'], img: 'assets/img/uud.jpg' },
-    { l: 'mudah', k: 'Sejarah', q: 'Siapa yang membacakan Proklamasi?', a: 'Soekarno', d: ['Hatta', 'Bung Tomo', 'Diponegoro', 'Pattimura', 'Sudirman'], img: 'assets/img/proklamasi.jpg' },
-    { l: 'mudah', k: 'Sejarah', q: 'Tahun kemerdekaan Indonesia adalah...', a: '1945', d: ['1908', '1928', '1950', '1942', '1901'] },
-    { l: 'mudah', k: 'Sejarah', q: 'Sumpah Pemuda diucapkan pada tahun...', a: '1928', d: ['1908', '1945', '1930', '1950', '1901'] },
+    // ---------- SEDANG: Penjumlahan ----------
+    { l: 'sedang', k: 'Penjumlahan', q: '25 + 18 = ?', a: '43', d: ['42', '44', '41', '45', '33'] },
+    { l: 'sedang', k: 'Penjumlahan', q: '47 + 36 = ?', a: '83', d: ['82', '84', '81', '85', '73'] },
+    { l: 'sedang', k: 'Penjumlahan', q: '125 + 68 = ?', a: '193', d: ['192', '194', '191', '195', '183'] },
+    { l: 'sedang', k: 'Penjumlahan', q: '240 + 175 = ?', a: '415', d: ['414', '416', '413', '417', '405'] },
+    { l: 'sedang', k: 'Penjumlahan', q: '356 + 128 = ?', a: '484', d: ['483', '485', '482', '486', '474'] },
+    { l: 'sedang', k: 'Penjumlahan', q: '430 + 260 = ?', a: '690', d: ['680', '700', '688', '692', '590'] },
+    { l: 'sedang', k: 'Penjumlahan', q: '517 + 265 = ?', a: '782', d: ['781', '783', '780', '784', '772'] },
+    { l: 'sedang', k: 'Penjumlahan', q: '608 + 199 = ?', a: '807', d: ['806', '808', '805', '809', '797'] },
+    { l: 'sedang', k: 'Penjumlahan', q: 'Ada 3 baki, tiap baki berisi 12 telur. Berapa jumlah telur pada gambar?', a: '36', d: ['33', '39', '34', '38', '24'], img: 'assets/img/hitung-06.png' },
 
-    // ---------- MUDAH: NKRI ----------
-    { l: 'mudah', k: 'NKRI', q: 'Negara kita bernama...', a: 'Indonesia', d: ['Malaysia', 'Thailand', 'Filipina', 'Brunei', 'Singapura'] },
-    { l: 'mudah', k: 'NKRI', q: 'Ibu kota Indonesia adalah...', a: 'Jakarta', d: ['Bandung', 'Medan', 'Surabaya', 'Yogya', 'Denpasar'] },
-    { l: 'mudah', k: 'NKRI', q: 'Pulau tempat Jakarta berada...', a: 'Jawa', d: ['Sumatera', 'Kalimantan', 'Sulawesi', 'Papua', 'Bali'] },
-    { l: 'mudah', k: 'NKRI', q: 'Semboyang Bhinneka Tunggal Ika berarti...', a: 'bersatu', d: ['berpecah', 'bersaing', 'bermusuhan', 'sendirian', 'bertengkar'] },
-    { l: 'mudah', k: 'NKRI', q: 'Kata "Bhinneka" artinya...', a: 'berbeda', d: ['sama', 'satu', 'hampir', 'mirip', 'serupa'] },
-    { l: 'mudah', k: 'Lambang Negara', q: 'Pita yang dipegang Garuda bertuliskan...', a: 'Bhinneka', d: ['Merdeka', 'Indonesia', 'Pancasila', 'Rajawali', 'Sumpah'] },
+    // ---------- SEDANG: Pengurangan ----------
+    { l: 'sedang', k: 'Pengurangan', q: '52 - 27 = ?', a: '25', d: ['24', '26', '23', '27', '35'] },
+    { l: 'sedang', k: 'Pengurangan', q: '90 - 46 = ?', a: '44', d: ['43', '45', '42', '46', '54'] },
+    { l: 'sedang', k: 'Pengurangan', q: '210 - 85 = ?', a: '125', d: ['124', '126', '123', '127', '115'] },
+    { l: 'sedang', k: 'Pengurangan', q: '400 - 165 = ?', a: '235', d: ['234', '236', '233', '237', '225'] },
+    { l: 'sedang', k: 'Pengurangan', q: '732 - 248 = ?', a: '484', d: ['483', '485', '482', '486', '474'] },
+    { l: 'sedang', k: 'Pengurangan', q: '506 - 199 = ?', a: '307', d: ['306', '308', '305', '309', '297'] },
+    { l: 'sedang', k: 'Pengurangan', q: '841 - 356 = ?', a: '485', d: ['484', '486', '483', '487', '475'] },
+    { l: 'sedang', k: 'Pengurangan', q: '320 - 148 = ?', a: '172', d: ['171', '173', '170', '174', '162'] },
+    { l: 'sedang', k: 'Pengurangan', q: 'Ada 40 biji kacang, 12 biji kacang dibuang. Berapa sisa kacang pada gambar?', a: '28', d: ['27', '29', '26', '30', '18'], img: 'assets/img/hitung-07.png' },
 
-    // ---------- MUDAH: Aturan & Sikap ----------
-    { l: 'mudah', k: 'Aturan & Norma', q: 'Saat bendera dikibarkan, kita harus...', a: 'beri hormat', d: ['tidur', 'berlari', 'bermain', 'berteriak', 'makan'] },
-    { l: 'mudah', k: 'Aturan & Norma', q: 'Di sekolah kita harus...', a: 'patuh aturan', d: ['memalak', 'merusak', 'berkelahi', 'mencontek', 'membohongi'] },
-    { l: 'mudah', k: 'Sikap Baik', q: 'Kita harus ... kepada sesama teman.', a: 'menghormati', d: ['membenci', 'menyakiti', 'mengejek', 'memukul', 'menipu'] },
-    { l: 'mudah', k: 'Sikap Baik', q: 'Murid yang baik pasti...', a: 'rajin', d: ['malas', 'nakal', 'berisik', 'curang', 'ceroboh'] },
-    { l: 'mudah', k: 'Sikap Baik', q: 'Bertemu guru, kita sebaiknya...', a: 'sopan', d: ['kasar', 'malas', 'ceroboh', 'lalai', 'bandel'] },
+    // ---------- SEDANG: Perkalian ----------
+    { l: 'sedang', k: 'Perkalian', q: '12 x 4 = ?', a: '48', d: ['47', '49', '46', '50', '36'] },
+    { l: 'sedang', k: 'Perkalian', q: '15 x 3 = ?', a: '45', d: ['44', '46', '43', '47', '35'] },
+    { l: 'sedang', k: 'Perkalian', q: '21 x 5 = ?', a: '105', d: ['104', '106', '103', '107', '95'] },
+    { l: 'sedang', k: 'Perkalian', q: '24 x 6 = ?', a: '144', d: ['143', '145', '142', '146', '134'] },
+    { l: 'sedang', k: 'Perkalian', q: '32 x 7 = ?', a: '224', d: ['223', '225', '222', '226', '214'] },
+    { l: 'sedang', k: 'Perkalian', q: '45 x 8 = ?', a: '360', d: ['350', '370', '358', '362', '340'] },
+    { l: 'sedang', k: 'Perkalian', q: '63 x 9 = ?', a: '567', d: ['566', '568', '565', '569', '557'] },
+    { l: 'sedang', k: 'Perkalian', q: '7 x 26 = ?', a: '182', d: ['181', '183', '180', '184', '172'] },
+    { l: 'sedang', k: 'Perkalian', q: 'Ada 6 baris, tiap baris berisi 8 kursi. Berapa jumlah kursi pada gambar?', a: '48', d: ['44', '52', '46', '50', '38'], img: 'assets/img/hitung-05.png' },
 
-    // ---------- MUDAH: Identitas & Kewajiban ----------
-    { l: 'mudah', k: 'Identitas Diri', q: 'Nama, tempat lahir, dan tanggal lahir disebut...', a: 'identitas', d: ['alamat', 'hobi', 'nilai', 'prestasi', 'kegiatan'] },
-    { l: 'mudah', k: 'Identitas Diri', q: 'Bahasa persatuan bangsa Indonesia adalah...', a: 'Bahasa Indonesia', d: ['Bahasa Jawa', 'Bahasa Sunda', 'Bahasa Inggris', 'Bahasa Arab', 'Bahasa Belanda'] },
-    { l: 'mudah', k: 'Hak & Kewajiban', q: 'Kewajiban siswa di kelas adalah...', a: 'belajar', d: ['bermain', 'tidur', 'mencontek', 'berteriak', 'berlari'] },
+    // ---------- SEDANG: Pembagian ----------
+    { l: 'sedang', k: 'Pembagian', q: '84 : 7 = ?', a: '12', d: ['11', '13', '10', '14', '7'] },
+    { l: 'sedang', k: 'Pembagian', q: '96 : 8 = ?', a: '12', d: ['11', '13', '10', '14', '16'] },
+    { l: 'sedang', k: 'Pembagian', q: '144 : 12 = ?', a: '12', d: ['11', '13', '10', '14', '18'] },
+    { l: 'sedang', k: 'Pembagian', q: '120 : 6 = ?', a: '20', d: ['18', '22', '19', '21', '15'] },
+    { l: 'sedang', k: 'Pembagian', q: '175 : 5 = ?', a: '35', d: ['34', '36', '33', '37', '25'] },
+    { l: 'sedang', k: 'Pembagian', q: '156 : 4 = ?', a: '39', d: ['38', '40', '37', '41', '29'] },
+    { l: 'sedang', k: 'Pembagian', q: '210 : 3 = ?', a: '70', d: ['68', '72', '69', '71', '60'] },
+    { l: 'sedang', k: 'Pembagian', q: '48 buku dibagi rata ke dalam 6 rak. Berapa buku tiap rak pada gambar?', a: '8', d: ['7', '9', '6', '10', '16'], img: 'assets/img/hitung-08.png' },
 
-    // ---------- SEDANG: Lambang & Simbol ----------
-    { l: 'sedang', k: 'Lambang Negara', q: 'Berapa jumlah sila pada perisai Garuda?', a: '5', d: ['3', '4', '6', '7', '8'], img: 'assets/img/garuda.png' },
-    { l: 'sedang', k: 'Simbol Negara', q: 'Bintang pada perisai berwarna...', a: 'kuning', d: ['merah', 'hijau', 'biru', 'putih', 'hitam'] },
-    { l: 'sedang', k: 'Sila Pancasila', q: 'Lambang sila pertama adalah...', a: 'bintang', d: ['rantai', 'beringin', 'banteng', 'padi', 'kapas'] },
-    { l: 'sedang', k: 'Sila Pancasila', q: 'Lambang sila kedua adalah...', a: 'rantai', d: ['bintang', 'beringin', 'banteng', 'padi', 'kapas'] },
-    { l: 'sedang', k: 'Sila Pancasila', q: 'Lambang sila ketiga adalah...', a: 'beringin', d: ['bintang', 'rantai', 'banteng', 'padi', 'kapas'] },
-    { l: 'sedang', k: 'Sila Pancasila', q: 'Lambang sila keempat adalah...', a: 'banteng', d: ['bintang', 'rantai', 'beringin', 'padi', 'kapas'] },
-    { l: 'sedang', k: 'Sila Pancasila', q: 'Lambang sila kelima adalah...', a: 'padi kapas', d: ['bintang', 'rantai', 'beringin', 'banteng', 'perisai'] },
-    { l: 'sedang', k: 'Sila Pancasila', q: 'Banteng dijadikan lambang karena suka...', a: 'berkumpul', d: ['sendirian', 'berlari', 'bersembunyi', 'berterbang', 'berenang'] },
-    { l: 'sedang', k: 'Sila Pancasila', q: 'Pohon beringin bermakna rakyat bisa...', a: 'berteduh', d: ['berlari', 'berenang', 'berlomba', 'bersembunyi', 'berteriak'] },
-    { l: 'sedang', k: 'Sila Pancasila', q: 'Rantai yang berkait melambangkan rakyat harus...', a: 'bersatu', d: ['berpecah', 'sendirian', 'berlawanan', 'bersaing', 'bermusuhan'] },
-    { l: 'sedang', k: 'Sila Pancasila', q: 'Padi dan kapas melambangkan...', a: 'kemakmuran', d: ['kelaparan', 'perang', 'bencana', 'kekeringan', 'wabah'], img: 'assets/img/padi.jpg' },
-    { l: 'sedang', k: 'Lambang Negara', q: 'Perisai di dada Garuda melambangkan...', a: 'pertahanan', d: ['permainan', 'perjalanan', 'perayaan', 'perpustakaan', 'pertengkaran'] },
-    { l: 'sedang', k: 'Lambang Negara', q: 'Bulu di leher Garuda melambangkan tahun...', a: '1945', d: ['1908', '1947', '1950', '2020', '1900'] },
-    { l: 'sedang', k: 'Lambang Negara', q: 'Bulu sayap Garuda berjumlah...', a: '17', d: ['12', '15', '18', '19', '25'] },
-    { l: 'sedang', k: 'Lambang Negara', q: 'Bulu ekor Garuda berjumlah...', a: '8', d: ['5', '6', '7', '9', '10'] },
-    { l: 'sedang', k: 'Lambang Negara', q: 'Warna emas pada Garuda melambangkan...', a: 'keagungan', d: ['kelemahan', 'perang', 'keburukan', 'kesedihan', 'keceriaan'] },
-    { l: 'sedang', k: 'Simbol Negara', q: 'Garis melintang pada perisai melambangkan...', a: 'khatulistiwa', d: ['samudra', 'lautan', 'gunung', 'gurun', 'sungai'] },
+    // ---------- SULIT: Penjumlahan ----------
+    { l: 'sulit', k: 'Penjumlahan', q: 'Bu Ani punya 125 pensil, lalu membeli 78 pensil lagi. Berapa jumlah pensil sekarang?', a: '203', d: ['202', '204', '201', '205', '193'] },
+    { l: 'sulit', k: 'Penjumlahan', q: 'Di kelas ada 24 anak laki-laki dan 27 anak perempuan. Berapa banyak siswa di kelas?', a: '51', d: ['50', '52', '49', '53', '41'] },
+    { l: 'sulit', k: 'Penjumlahan', q: 'Perpustakaan punya 1.250 buku, lalu mendapat 785 buku baru. Berapa jumlah buku sekarang?', a: '2.035', d: ['2.025', '2.045', '2.030', '2.040', '1.935'] },
+    { l: 'sulit', k: 'Penjumlahan', q: 'Ayah berumur 45 tahun dan Ibu berumur 41 tahun. Berapa jumlah umur mereka berdua?', a: '86', d: ['85', '87', '84', '88', '76'] },
+    { l: 'sulit', k: 'Penjumlahan', q: 'Koperasi sekolah menjual 275 buku pagi dan 348 buku sore. Berapa buku yang terjual hari itu?', a: '623', d: ['622', '624', '621', '625', '613'] },
+    { l: 'sulit', k: 'Penjumlahan', q: 'Hasil panen padi 1.250 kg lalu bertambah 975 kg. Berapa berat padi sekarang?', a: '2.225', d: ['2.215', '2.235', '2.220', '2.230', '2.125'] },
 
-    // ---------- SEDANG: NKRI ----------
-    { l: 'sedang', k: 'NKRI', q: 'Indonesia memiliki sekitar berapa pulau?', a: '17.000', d: ['500', '1.000', '5.000', '30.000', '100'] },
-    { l: 'sedang', k: 'NKRI', q: 'Bhinneka Tunggal Ika berasal dari kitab...', a: 'Sutasoma', d: ['Ramayana', 'Babad Jawi', 'Centhini', 'Serat', 'Hikayat'] },
+    // ---------- SULIT: Pengurangan ----------
+    { l: 'sulit', k: 'Pengurangan', q: 'Toko punya 250 kg gula, lalu terjual 135 kg. Berapa sisa gula di toko?', a: '115', d: ['114', '116', '113', '117', '105'] },
+    { l: 'sulit', k: 'Pengurangan', q: 'Di gudang ada 1.250 kg tepung, lalu digunakan 475 kg. Berapa sisa tepung?', a: '775', d: ['774', '776', '773', '777', '765'] },
+    { l: 'sulit', k: 'Pengurangan', q: 'Jarak sekolah 900 meter, Budi sudah menempuh 350 meter. Berapa sisa jarak yang harus ditempuh?', a: '550', d: ['540', '560', '548', '552', '530'] },
+    { l: 'sulit', k: 'Pengurangan', q: 'Perpustakaan punya 1.200 buku lalu dipinjam 650 buku. Berapa buku yang tersisa?', a: '550', d: ['545', '555', '540', '560', '600'] },
+    { l: 'sulit', k: 'Pengurangan', q: 'Pak Tono menabung 2.500 rupiah, lalu membelanjakan 1.375 rupiah. Berapa sisa tabungannya?', a: '1.125', d: ['1.115', '1.135', '1.120', '1.130', '1.025'] },
+    { l: 'sulit', k: 'Pengurangan', q: 'Di peternakan ada 60 butir telur, 15 butir pecah. Berapa sisa butir telur pada gambar?', a: '45', d: ['44', '46', '43', '47', '35'], img: 'assets/img/hitung-11.png' },
 
-    // ---------- SEDANG: Aturan, Hak, Identitas ----------
-    { l: 'sedang', k: 'Aturan & Norma', q: 'Aturan tertulis di sekolah disebut...', a: 'tata tertib', d: ['tata bahasa', 'tata kota', 'tata rias', 'tata surya', 'tata nilai'] },
-    { l: 'sedang', k: 'Aturan & Norma', q: 'Hukum tidak tertulis yang dilestarikan masyarakat disebut...', a: 'adat istiadat', d: ['undang-undang', 'peraturan', 'perjanjian', 'kontrak', 'tata tertib'] },
-    { l: 'sedang', k: 'Hak & Kewajiban', q: 'Setiap anak berhak mendapat...', a: 'pendidikan', d: ['hukuman', 'denda', 'sanksi', 'penjara', 'hinaan'] },
-    { l: 'sedang', k: 'Hak & Kewajiban', q: 'Hak dan kewajiban harus dijalankan...', a: 'seimbang', d: ['berat', 'santai', 'bebas', 'sepi', 'pilih-pilih'] },
-    { l: 'sedang', k: 'Identitas Diri', q: 'Banyak suku dan agama di Indonesia disebut...', a: 'keberagaman', d: ['persamaan', 'persaingan', 'perpecahan', 'persatuan', 'keseragaman'] },
-    { l: 'sedang', k: 'Identitas Diri', q: 'Menghargai teman yang berbeda suku artinya...', a: 'menghargai', d: ['memusuhi', 'mengejek', 'membedakan', 'mengucilkan', 'memaksakan'] },
+    // ---------- SULIT: Perkalian ----------
+    { l: 'sulit', k: 'Perkalian', q: 'Ibu membeli 6 kantong apel, tiap kantong berisi 12 apel. Lalu 5 apel dimakan. Berapa sisa apel pada gambar?', a: '67', d: ['66', '68', '65', '69', '62'], img: 'assets/img/hitung-10.png' },
+    { l: 'sulit', k: 'Perkalian', q: 'Sebuah papan berisi 10 telur. Ibu punya 8 papan dan membeli 15 telur lagi. Berapa jumlah telur?', a: '95', d: ['94', '96', '93', '97', '85'] },
+    { l: 'sulit', k: 'Perkalian', q: 'Ada 15 laci, tiap laci berisi 6 buku. Lalu 10 buku dipinjam. Berapa sisa buku?', a: '80', d: ['79', '81', '78', '82', '70'] },
+    { l: 'sulit', k: 'Perkalian', q: 'Setiap siswa menerima 2 buku. Jika ada 24 siswa, berapa buku yang dibagikan?', a: '48', d: ['47', '49', '46', '50', '38'] },
+    { l: 'sulit', k: 'Perkalian', q: 'Sebuah keranjang muat 9 kg jeruk. Ada 7 keranjang penuh. Berapa berat seluruh jeruk?', a: '63', d: ['62', '64', '61', '65', '53'] },
+    { l: 'sulit', k: 'Perkalian', q: 'Panitia menyiapkan 8 kardus, tiap kardus berisi 7 botol minum. Berapa jumlah botol?', a: '56', d: ['55', '57', '54', '58', '46'] },
+    { l: 'sulit', k: 'Perkalian', q: 'Ada 12 baris, tiap baris berisi 6 bunga. Berapa jumlah bunga pada gambar?', a: '72', d: ['71', '73', '70', '74', '62'], img: 'assets/img/hitung-09.png' },
 
-    // ---------- SEDANG: Sikap sesuai sila ----------
-    { l: 'sedang', k: 'Sikap Baik', q: 'Menghormati teman yang sedang beribadah sesuai sila...', a: 'pertama', d: ['kedua', 'ketiga', 'keempat', 'kelima', 'keenam'] },
-    { l: 'sedang', k: 'Sikap Baik', q: 'Memilih ketua kelas dengan musyawarah sesuai sila...', a: 'keempat', d: ['pertama', 'kedua', 'ketiga', 'kelima', 'keenam'] },
-    { l: 'sedang', k: 'Sikap Baik', q: 'Bersikap adil terhadap semua teman sesuai sila...', a: 'kelima', d: ['pertama', 'kedua', 'ketiga', 'keempat', 'keenam'] },
-
-    // ---------- SEDANG: Sejarah & Dasar Negara ----------
-    { l: 'sedang', k: 'Sejarah', q: 'Pidato Soekarno 1 Juni 1945 membahas...', a: 'Pancasila', d: ['Proklamasi', 'UUD 1945', 'Kemerdekaan', 'Kebangsaan', 'Sumpah Pemuda'] },
-    { l: 'sedang', k: 'Sejarah', q: 'Soekarno dijuluki...', a: 'Bung Karno', d: ['Bung Tomo', 'Bung Hatta', 'Sudirman', 'Gatot', 'Diponegoro'], img: 'assets/img/soekarno.jpg' },
-    { l: 'sedang', k: 'Sejarah', q: 'Naskah Proklamasi diketik oleh...', a: 'Sayuti Melik', d: ['Maeda', 'Sjam', 'Sukiman', 'Latief', 'Soebardjo'] },
-    { l: 'sedang', k: 'Sejarah', q: 'Pertempuran 10 November 1945 terjadi di...', a: 'Surabaya', d: ['Jakarta', 'Bandung', 'Medan', 'Yogya', 'Makassar'] },
-    { l: 'sedang', k: 'Sejarah', q: 'Sumpah Pemuda menegaskan satu bangsa, satu nusa, satu...', a: 'bahasa', d: ['agama', 'suku', 'negara', 'raja', 'pulau'] },
-    { l: 'sedang', k: 'Sejarah', q: 'Siapa pencipta lagu pada gambar?', a: 'Supratman', d: ['Soekarno', 'Hatta', 'Sudirman', 'Djanur', 'Ismail'], img: 'assets/img/indonesiaraya.jpg' },
-    { l: 'sedang', k: 'Dasar Negara', q: 'Pancasila ditetapkan sebagai dasar negara pada tanggal...', a: '18 Agustus', d: ['1 Juni', '17 Agustus', '29 Mei', '10 November', '28 Oktober'] },
-
-    // ---------- SULIT: Sejarah ----------
-    { l: 'sulit', k: 'Sejarah', q: 'Kepanjangan BPUPKI adalah Badan...', a: 'Penyelidik', d: ['Pemberontak', 'Penjelajah', 'Pelajar', 'Pemilih', 'Penulis'] },
-    { l: 'sulit', k: 'Sejarah', q: 'Sidang pertama PPKI berlangsung tanggal...', a: '18 Agustus', d: ['16 Agustus', '17 Agustus', '19 Agustus', '20 Agustus', '15 Agustus'] },
-    { l: 'sulit', k: 'Sejarah', q: 'Hari lahir Pancasila diperingati setiap...', a: '1 Juni', d: ['17 Agustus', '10 November', '28 Oktober', '20 Mei', '5 Desember'] },
-    { l: 'sulit', k: 'Sejarah', q: 'Perancang lambang Garuda Pancasila adalah...', a: 'Hamid II', d: ['Soekarno', 'Hatta', 'Sudirman', 'Ki Hajar', 'Dwijendra'] },
-    { l: 'sulit', k: 'Sejarah', q: 'Garuda Pancasila diresmikan penggunaannya tahun...', a: '1950', d: ['1945', '1946', '1948', '1955', '1960'] },
-    { l: 'sulit', k: 'Sejarah', q: 'Jepang menyerah pada tahun...', a: '1945', d: ['1942', '1946', '1948', '1949', '1950'] },
-
-    // ---------- SULIT: NKRI ----------
-    { l: 'sulit', k: 'NKRI', q: 'Garis khatulistiwa melintasi pulau...', a: 'Kalimantan', d: ['Jawa', 'Bali', 'Timor', 'Buru', 'Sumba'] },
-    { l: 'sulit', k: 'NKRI', q: 'Kata Indonesia berasal dari bahasa...', a: 'Yunani', d: ['Belanda', 'Inggris', 'Portugis', 'Melayu', 'Arab'] },
-    { l: 'sulit', k: 'NKRI', q: 'Jumlah provinsi Indonesia saat ini...', a: '38', d: ['34', '33', '40', '36', '32'] },
-
-    // ---------- SULIT: Simbol & Lambang ----------
-    { l: 'sulit', k: 'Simbol Negara', q: 'Mata uang resmi Indonesia adalah...', a: 'Rupiah', d: ['Ringgit', 'Baht', 'Dolar', 'Yen', 'Euro'] },
-    { l: 'sulit', k: 'Lambang Negara', q: 'Jumlah bulu di pangkal ekor Garuda...', a: '19', d: ['17', '18', '45', '8', '12'] },
-    { l: 'sulit', k: 'Lambang Negara', q: 'Bulu di leher Garuda berjumlah...', a: '45', d: ['17', '8', '19', '24', '50'] },
-    { l: 'sulit', k: 'Dasar Negara', q: 'Ideologi bangsa Indonesia adalah...', a: 'Pancasila', d: ['Komunis', 'Liberal', 'Monarki', 'Anarki', 'Feodal'] },
-    { l: 'sulit', k: 'Dasar Negara', q: 'Pancasila merupakan dasar dari...', a: 'negara', d: ['sekolah', 'keluarga', 'permainan', 'rumah', 'acara'] },
-
-    // ---------- SULIT: Sila & Sikap ----------
-    { l: 'sulit', k: 'Sila Pancasila', q: 'Banteng adalah hewan yang suka...', a: 'berkelompok', d: ['sendirian', 'bersembunyi', 'berenang', 'berterbang', 'berlari'] },
-    { l: 'sulit', k: 'Sikap Baik', q: 'Keadilan sosial di sekolah contohnya...', a: 'berbagi', d: ['memihak', 'memalak', 'mencontek', 'menghina', 'memotong'] },
-    { l: 'sulit', k: 'Sikap Baik', q: 'Membantu korban bencana mencerminkan sila...', a: 'kedua', d: ['pertama', 'ketiga', 'keempat', 'kelima', 'keenam'] },
-    { l: 'sulit', k: 'Sikap Baik', q: 'Tidak membeda-bedakan teman sesuai sila...', a: 'ketiga', d: ['pertama', 'kedua', 'keempat', 'kelima', 'keenam'] },
-
-    // ---------- SULIT: Aturan, Hak, Identitas ----------
-    { l: 'sulit', k: 'Aturan & Norma', q: 'Norma yang dijalankan karena ancaman hukuman...', a: 'norma hukum', d: ['norma adat', 'norma agama', 'norma sopan', 'norma keluarga', 'norma sekolah'] },
-    { l: 'sulit', k: 'Aturan & Norma', q: 'Undang-undang termasuk jenis norma...', a: 'hukum', d: ['adat', 'agama', 'sopan', 'keluarga', 'sekolah'] },
-    { l: 'sulit', k: 'Hak & Kewajiban', q: 'Warga negara wajib membayar...', a: 'pajak', d: ['hadiah', 'gaji', 'bonus', 'libur', 'hormat'] },
-    { l: 'sulit', k: 'Hak & Kewajiban', q: 'Anak berhak dilindungi orang tua dan...', a: 'negara', d: ['tamu', 'tetangga', 'pengunjung', 'wisatawan', 'tukang'] },
-    { l: 'sulit', k: 'Identitas Diri', q: 'Bahasa Indonesia berasal dari bahasa...', a: 'Melayu', d: ['Jawa', 'Arab', 'Belanda', 'Inggris', 'Sunda'] },
-    { l: 'sulit', k: 'Identitas Diri', q: 'Identitas yang menunjukkan asal daerah seseorang...', a: 'suku', d: ['nilai', 'hobi', 'umur', 'tinggi', 'alamat'] },
-    { l: 'sulit', k: 'Hak & Kewajiban', q: 'Kepala negara Indonesia disebut...', a: 'presiden', d: ['gubernur', 'bupati', 'walikota', 'lurah', 'camat'] },
+    // ---------- SULIT: Pembagian ----------
+    { l: 'sulit', k: 'Pembagian', q: '72 karung beras dibagi rata ke 8 gudang. Berapa karung tiap gudang pada gambar?', a: '8', d: ['7', '9', '6', '10', '16'], img: 'assets/img/hitung-12.png' },
+    { l: 'sulit', k: 'Pembagian', q: '90 permen dibagi rata untuk 6 anak. Berapa permen tiap anak?', a: '15', d: ['14', '16', '13', '17', '12'] },
+    { l: 'sulit', k: 'Pembagian', q: '96 buku dibagi rata ke 12 rak. Berapa buku tiap rak?', a: '8', d: ['7', '9', '6', '10', '12'] },
+    { l: 'sulit', k: 'Pembagian', q: 'Seorang penjual membagi 70 ayam ke 5 kandang dengan rata. Berapa ayam tiap kandang?', a: '14', d: ['13', '15', '12', '16', '10'] },
+    { l: 'sulit', k: 'Pembagian', q: '63 siswa dibagi menjadi 7 kelompok. Berapa siswa tiap kelompok?', a: '9', d: ['8', '10', '7', '11', '14'] },
+    { l: 'sulit', k: 'Pembagian', q: '144 balon dibagi rata ke 12 anak. Berapa balon tiap anak?', a: '12', d: ['11', '13', '10', '14', '16'] },
   ];
 
   LIST.forEach((s, i) => {

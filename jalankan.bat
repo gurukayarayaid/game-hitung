@@ -21,7 +21,7 @@ echo.
 echo   Menjalankan server lokal: %URL%
 echo   Biarkan jendela server tetap terbuka selama bermain.
 echo.
-start "Bahasa Indonesia - server" /min cmd /c "%PY% -m http.server %PORT% --bind 127.0.0.1"
+start "Matematika - server" /min cmd /c "%PY% -m http.server %PORT% --bind 127.0.0.1"
 
 set /a N=0
 :wait

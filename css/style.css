@@ -268,7 +268,7 @@ button, input, select { font: inherit; color: inherit; }
   font-size: clamp(19px, 2.9vh, 38px); font-weight: 900; letter-spacing: .01em; color: var(--ink);
   line-height: 1.2; text-align: center; white-space: normal; max-width: 100%;
 }
-.q-main img { height: clamp(64px, 12vh, 140px); display: block; margin: 0 auto; }
+.q-main img { max-height: clamp(64px, 12vh, 150px); max-width: 100%; height: auto; display: block; margin: 0 auto; }
 .q-hint {
   font-size: clamp(12px, 1.6vh, 19px); font-weight: 700; color: var(--ink-soft);
   max-width: 100%; line-height: 1.25; text-align: center;
