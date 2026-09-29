@@ -448,6 +448,10 @@ button, input, select { font: inherit; color: inherit; }
 }
 .cursor.c1 { color: var(--c1); }
 .cursor.c2 { color: var(--c2); }
+.cursor.c1 .c-bg { fill: rgba(61, 123, 255, .42); stroke: rgba(255, 255, 255, .75); }
+.cursor.c2 .c-bg { fill: rgba(255, 138, 43, .42); stroke: rgba(255, 255, 255, .75); }
+.cursor.c1.locked .c-bg { fill: rgba(61, 123, 255, .6); }
+.cursor.c2.locked .c-bg { fill: rgba(255, 138, 43, .6); }
 .cursor.locked .c-fg { stroke-dasharray: 14 14; }
 
 #toast {
